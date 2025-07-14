@@ -1,0 +1,148 @@
+    body {
+      /*font-family: Arial, sans-serif;*/
+      color: #e6e7e9;
+      background-color: #071326;
+      padding: 5px;
+      margin: 0;
+      font-size: 12px;
+      background: var(--sectra-bg) !important;
+      color: var(--sectra-text);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow-y: auto;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: #596271;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #a1a5ae;
+      border-radius: 5px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    a {
+      color: #e6e7e9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .card {
+      text-indent: 8px;
+    }
+
+    .lucide-icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+      /* This will align the icon better with text, like Bootstrap icons */
+      /*margin-left: 0.7em;*/
+    }
+
+    .svg-icon {
+      vertical-align: -0.03em;
+      width: 1em;
+      height: 1em;
+    }
+
+    .bi,
+    .lucide-icon,
+    h6 {
+      color: #838993ff;
+      font-weight: normal;
+    }
+
+    .container-links {
+      padding-left: 7px;
+    }
+
+    ul ul {
+      padding-left: 14px;
+    }
+
+
+
+
+
+/* ----------  “Sectra” palette helpers  ---------- */
+    :root {
+      --sectra-bg:    #071326;
+      --sectra-bg-2:  #0e1b33;
+      --sectra-bg-3:  #11223f;
+      --sectra-text:  #e6e7e9;
+      --sectra-med:   #596271;
+      --sectra-light: #a1a5ae;
+    }
+
+    /* ----------  Card & header  ---------- */
+    .sectra-card {
+      background: var(--sectra-bg-2);
+      border: 1px solid var(--sectra-med);
+      color: var(--sectra-text);
+    }
+    .sectra-card .card-header {
+      background: var(--sectra-bg-3);
+      border-bottom: 1px solid var(--sectra-med);
+      color: var(--sectra-text);
+    }
+
+    /* ----------  Form controls  ---------- */
+    .sectra-card .form-control,
+    .sectra-card .form-select,
+    .sectra-card textarea {
+      background: var(--sectra-bg);
+      color: var(--sectra-text);
+      border: 1px solid var(--sectra-med);
+    }
+
+    /* NEW — light-grey placeholder so it’s legible on dark bg */
+    .sectra-card .form-control::placeholder,
+    .sectra-card textarea::placeholder {
+      color: var(--sectra-light);      /* #a1a5ae */
+      opacity: 0.85;                   /* Fire­fox respects opacity */
+    }
+
+
+    .sectra-card .form-control:focus,
+    .sectra-card .form-select:focus,
+    .sectra-card textarea:focus {
+      background: var(--sectra-bg);
+      color: var(--sectra-text);
+      border-color: var(--sectra-light);
+      box-shadow: none;
+    }
+
+    /* ----------  Buttons  ---------- */
+    .btn-sectra {
+      background: var(--sectra-med);
+      border-color: var(--sectra-med);
+      color: var(--sectra-text);
+    }
+    .btn-sectra:hover,
+    .btn-sectra:focus {
+      background: #4d5563;
+      border-color: #4d5563;
+      color: var(--sectra-text);
+    }
+
+    /* ----------  Alerts / confirmation  ---------- */
+    .sectra-alert {
+      background: var(--sectra-bg-3);
+      border: 1px solid var(--sectra-med);
+      color: var(--sectra-text);
+    }
