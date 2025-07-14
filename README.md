@@ -42,7 +42,7 @@ Embed the resulting URL in Sectra PACS → **Info Panel** settings (see below).
 ## Embedding in Sectra PACS (IDS7)
 
 1. In IDS7, open **Options → Advanced Configuration**.
-2. Expand **Information Windo → Worklists and Search → Info Panel**.
+2. Expand **Information Window → Worklists and Search → Info Panel**.
 3. Select **URL** and paste the full address of your deployed `index.html` (e.g., `https://radiology.example.org/links/index.html`).
 4. Click **Apply** and **OK**.
 
