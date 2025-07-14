@@ -116,16 +116,6 @@ which converts every `data-lucide` element into an inline SVG. Full list: [https
 
 ---
 
-## Contributing
-
-Pull requests are welcome—especially for:
-
-* Accessibility improvements (ARIA labels, keyboard navigation)
-* New division templates (e.g., Nuclear Medicine)
-* Bug fixes in the JavaScript collapsible logic
-
----
-
 ## License
 
 [MIT](LICENSE)
