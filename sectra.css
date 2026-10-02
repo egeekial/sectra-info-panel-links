@@ -76,6 +76,18 @@
       font-weight: bold;
     }
 
+    /* Collapsible panels: Bootstrap animates them with overflow:hidden, which keeps child margins
+       inside the panel. Do the same once they're open, or the margins collapse out of the panel
+       when the animation ends and the content snaps up a few pixels ("bounce"). */
+    li.collapse.show {
+      display: flow-root;
+    }
+
+    li.collapse,
+    li.collapsing {
+      margin-bottom: 0;
+    }
+
     .container-links {
       padding-left: 7px;
     }
