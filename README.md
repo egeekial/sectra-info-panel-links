@@ -9,6 +9,7 @@ A lightweight web page that surfaces frequently used Radiology resources (protoc
 * **Bootstrap 5** for responsive layout
 * **Bootstrap Icons** & **Lucide Icons** for a clean, modern UI
 * **Collapsible divisions** so radiologists can drill down to subspecialty resources without clutter
+* **Downtime mode** – links can be scheduled to appear only during a time window (e.g., a planned PACS outage), shown in red
 * Simple to **customize**: just edit `index.html` and update the placeholder URLs
 
 ---
@@ -49,6 +50,26 @@ Embed the resulting URL in Sectra PACS → **Info Panel** settings (see below).
 2. Replace each `https://example.com/...` placeholder with your institution’s real links.
 3. Optionally remove or duplicate list items/divisions to match your workflow.
 4. Save and refresh—no build step required.
+
+---
+
+## Downtime Mode (scheduled links)
+
+Any element can be limited to a time window, for example links to downtime procedures that should appear only during a planned PACS outage. Add `data-show-from` and/or `data-show-until` with ISO 8601 timestamps, and the optional `downtime` class to render it as a prominent red link:
+
+```html
+<li class="downtime" hidden
+    data-show-from="2026-10-10T22:00:00-04:00"
+    data-show-until="2026-10-11T06:00:00-04:00">
+  <i class="bi bi-exclamation-octagon me-1"></i><a href="https://downtime.example.com" target="_blank">PACS Downtime Procedures</a>
+</li>
+```
+
+* `sectra.js` checks every scheduled element on page load and again every 60 seconds, showing it when `data-show-from <= now < data-show-until`. Either attribute may be omitted to leave that end of the window open.
+* Include a time and a UTC offset (`-04:00`, `Z`). A timestamp without an offset is read in the workstation's local time, and a date-only value (`2026-10-10`) is read as midnight UTC, which is rarely what you want.
+* Add the `hidden` attribute in the markup so the element doesn't flash on screen before the script runs.
+* If a timestamp can't be parsed, the element stays hidden and a warning is logged to the browser console.
+* The schedule runs entirely in the browser. There is nothing to configure on the server and no external dependency.
 
 ---
 

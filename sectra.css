@@ -67,6 +67,15 @@
       font-weight: normal;
     }
 
+    /* downtime mode: prominent red links (see data-show-from / data-show-until in sectra.js) */
+    .downtime,
+    .downtime a,
+    .downtime .bi,
+    a.downtime {
+      color: #ff5c5c;
+      font-weight: bold;
+    }
+
     .container-links {
       padding-left: 7px;
     }
